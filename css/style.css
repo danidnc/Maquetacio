@@ -1,0 +1,211 @@
+html {
+  /*font i tamany a tot el document*/
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+body {
+  /*color de fons del web i marge interior per que els elements tinguin aire pels costats*/
+  background-color: wheat;
+  padding: 30px;
+}
+
+#container {
+  /*disposició vertical del web , ocupa tot el viewport*/
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+header {
+  /*estableix alçada de la capçalera , disposició de l'eix en horitzonal, reparteix els elements interiors als costats i aplica marge interior*/
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 10px 10px 0px;
+}
+
+#buscar {
+  /* la barra de cerca ocupa 6 vegades més espai que l'altre element de la capçalera , te un border radius arrodonit i el text al centre de la barra*/
+  flex-grow: 6;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#link_login {
+  /*li dona espai exterior per l'esquerra per separar-lo de la barra de cerca i una amplada de 50px*/
+  width: 50px;
+  margin-left: 100px;
+}
+
+main {
+  /*separa la secció principal de la capçalera , indica una alçada fixa i un marge interior, arrodoneix el border i aplica una imatge de fons a l'element, no es repeteix i s'adapta a l'element */
+  margin-top: 25px;
+  height: 450px;
+  padding: 25px;
+  border-radius: 10px;
+  background-image: url("../img/fondo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#catalogo {
+  /* aplica alçada fixa a l'element , disposició horitzonal del flex, elements repartits al centre de l'eix i amb aire entre ells*/
+  height: 450px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#llibre_esq {
+  /*indica alçada de les imatges i border arrodonits*/
+  height: 50%;
+  border-radius: 10px;
+}
+
+#llibre_mig {
+  border-radius: 10px;
+}
+
+#llibre_dret {
+  height: 50%;
+  border-radius: 10px;
+}
+
+.arrows {
+  /* tamany dels indicadors de moviment lateral*/
+  height: 15%;
+}
+
+#resumen {
+  /* indica marge superior per separar amb elemente anterior, marge interior per donar aire , alçada fixa i border arrodonit. Imatge de fons, no es repeteix i s'adapta a l'element*/
+  margin-top: 25px;
+  padding: 15px;
+  height: 450px;
+  border-radius: 10px;
+  background-image: url("../img/quadernblanc.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.grid-container {
+  /* estableix grid repartit en 6 fraccions horitzontals i en 2 verticals*/
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1.5fr;
+  grid-template-areas: /* indica com es reparteixen les arees*/
+    "Book-Image Book-Image Book-Description Book-Description Fav Buy"
+    "Book-Image Book-Image Book-Description Book-Description Price Price";
+}
+.Book-Image {
+  /*nombra area al grid , display flex horitzontal amb elements al centre a l'eix secundari*/
+  grid-area: Book-Image;
+  display: flex;
+  align-items: center;
+}
+
+.Book-Image img {
+  /*border radius de la imatge , no es repeteix , s'adapta al maxim sense distorsionar i es posiciona a l'esquerra*/
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+}
+
+.Book-Description {
+  /*amplada al 75% per que no s'escampi per tot l'element , estableix area al grid , display flex horitzonal , elements al centre per l'eix principal*/
+  width: 75%;
+  grid-area: Book-Description;
+  display: flex;
+  align-items: center;
+}
+
+.Book-Description p {
+  /* paràgraf amb estil en cursiva*/
+  font-style: italic;
+}
+
+.Fav {
+  /*estableix arees del grid , display flex horitzonal , elements al centre per l'eix principal*/
+  grid-area: Fav;
+  display: flex;
+  justify-content: center;
+}
+
+.Buy {
+  grid-area: Buy;
+  display: flex;
+  justify-content: center;
+}
+
+.Price {
+  grid-area: Price;
+  display: flex;
+  align-items: center;
+}
+
+.Price p {
+  /*tamany de la font pel preu*/
+  font-size: 78px;
+}
+
+footer {
+  /*estableix marge exterior al top, border arrodonit, alçada fixa , display flex horitzonal , elements repartits amb espai entre ells i alineats al centre a l'eix secundari*/
+  margin-top: 25px;
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  /*  background-color: brown; */
+  align-items: center;
+}
+
+footer div {
+  /*display flex de les caixes dins el footer , horitzontal , alineats al centre als dos eixos*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#who_img {
+  /*indica tamany de les imatges i marge exterior per la dreta*/
+  height: 50px;
+  margin-right: 20px;
+}
+
+#where_img {
+  height: 50px;
+  margin-right: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .grid-container {
+    /* estableix grid repartit en 4 fraccions horitzontals i en 2 verticals*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1.5fr;
+    grid-template-areas: /* indica com es reparteixen les arees*/
+      " Book-Description Book-Description Fav Buy"
+      " Book-Description Book-Description Price Price";
+  }
+
+  .llibres_ext {
+    display: none;
+  }
+
+  .Book-Image {
+    display: none;
+  }
+
+  #resumen {
+    background-image: url("../img/quadernblancMini.jpg");
+    padding-left: 15%;
+  }
+
+  .Book-Description p {
+    text-align: start;
+    font-size: 0.8em;
+  }
+}

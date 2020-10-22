@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- codificació de caràcters del web i informació relacionada amb l'autor i descripció -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Online shop and catalogue for the book store (Bring me the bookie) sited in Barcelona">
+    <meta name="author" content="DNCWEB">
+    <title>Bring me the bookie</title> <!-- Títol del web -->
+    <link rel="stylesheet" href="css/reset.css"> <!-- vinculació amb fulla d'estils reset de meyerweb.com -->
+    <link rel="stylesheet" href="css/style.css"> <!-- fulla d'estils pròpia del web -->
+</head>
+
+<body>
+    <div id="main_container">
+        <!-- contenidor principal del body per aplicar un display flex amb eix vertical al css -->
+        <header>
+            <!-- capçalera amb barra de cerca y login/registre -->
+            <input type="search" placeholder="Buscar por título, autor, categoría, editorial, ISBN ..." id="buscar">
+            <input type="image" src="ico/person-circle-outline.svg" alt="Login or register" title="Login or register"
+                id="link_login">
+        </header>
+        <main>
+            <!-- part principal de la web  -->
+            <section id="catalogo">
+                <!-- aquesta secció serà un carrusel on visualitzarem el catàleg, destacats o llista de favorits -->
+                <img src="ico/arrow-back-circle.svg" class="arrows">
+                <img src="img/sangredebarrio.jpg" id="llibre_esq" class="llibres_ext">
+                <img src="img/genesis.jpg" id="llibre_mig">
+                <img src="img/thesevendaughtersofeve.jpg" id="llibre_dret" class="llibres_ext">
+                <img src="ico/arrow-forward-circle.svg" class="arrows">
+            </section>
+        </main>
+        <section id="resumen" class="grid-container">
+            <!-- secció on visualitzem els detalls del títol amb focus al carrusel organitzat amb un grid -->
+            <div class="Book-Image">
+                <!-- imatge de la portada del títol amb focus al carrusel -->
+                <img src="img/genesis.jpg" alt="">
+            </div>
+            <div class="Book-Description">
+                <!-- descripció , sipnosi del títol -->
+                <p>
+                    Libro de historietas encuadernado en rústica de 220 páginas interiores en blanco y negro más
+                    cubiertas.
+                    El libro del Génesis según Robert Crumb es una adaptación literal al lenguaje del
+                    cómic del primero de los libros de la Biblia llevada a cabo por el prestigioso autor de cómics
+                    Robert Crumb, padre d...
+                </p>
+            </div>
+            <div class="Fav">
+                <!-- botó per afegir/eliminar el títol de la llista de favorits -->
+                <input type="image" id="link_fav" src="ico/star.svg" height="25px" title="Add to Favourite List">
+            </div>
+            <div class="Buy">
+                <!-- botó per afegir/eliminar el títol de la cistella -->
+                <input type="image" id="link_buy" src="ico/basket.svg" height="25px" title="Add to basket">
+            </div>
+            <div class="Price">
+                <!-- preu del títol -->
+                <p>32€</p>
+            </div>
+        </section>
+        <footer id="peu">
+            <!-- peu de web -->
+            <div id="who">
+                <!-- enllaç a web on es presenta l'equip i el propòsit de la botiga  -->
+                <label for="who_img" id="who_label">BRING ME THE BOOKIE &#174; 2020</label>
+                <input type="image" src="ico/chewie.png" id="who_img" title="Who we are" name="who_img">
+            </div>
+            <div id="where">
+                <!-- enllaç a web amb formulari de contacte i adreça física de la botiga -->
+                <input type="image" src="ico/world2.jpg" id="where_img" name="where_img"
+                    title="Where we are, contact us">
+                <label for="where_img">CONTACT</div>
+    </div>
+    </footer>
+    </div>
+
+</body>
+
+</html>
